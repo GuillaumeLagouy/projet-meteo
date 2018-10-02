@@ -25,3 +25,4 @@ npm run test
 npm run lint
 ```
 # projet-meteo
+Projet d'application web météo

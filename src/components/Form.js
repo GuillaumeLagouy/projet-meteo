@@ -20,6 +20,6 @@ const Form = {
             const requestRes = JSON.parse(response);
             EventManager.dispatchEvent(new CustomEvent('METEO::SearchCity', {detail: requestRes}));
         });
-    },
+    }
 };
 export default Form;
