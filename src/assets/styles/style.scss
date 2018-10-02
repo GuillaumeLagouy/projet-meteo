@@ -1,0 +1,18 @@
+@import 'variables';
+
+body{
+  background: $bg-gradient;
+  height: 100vh;
+}
+
+header{
+  border: solid 1px red;
+}
+
+header input, header button{
+  border: solid 1px blue;
+}
+
+#main-meteo{
+  border: solid 2px black;
+}
