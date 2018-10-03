@@ -16,10 +16,16 @@ const Form = {
 
     send(e){
         e.preventDefault();
+        //Get City
         AjaxGet('http://api.apixu.com/v1/current.json?key='+ Key +'&lang=fr&q='+ this.city.value, (response)=>{
             const requestRes = JSON.parse(response);
             EventManager.dispatchEvent(new CustomEvent('METEO::SearchCity', {detail: requestRes}));
         });
-    }
+        //Get Forecast
+        AjaxGet('http://api.apixu.com/v1/forecast.json?key='+ Key +'&days=7&lang=fr&q='+ this.city.value, (response) =>{
+            const requestRes = JSON.parse(response);
+            EventManager.dispatchEvent(new CustomEvent('METEO::Forecast', {detail: requestRes}));
+        });
+    },
 };
 export default Form;
