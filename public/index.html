@@ -8,66 +8,67 @@
     <title>projet-meteo</title>
   </head>
   <body>
+  <div id="page-meteo">
+      <a href="#page-2" id="favorite">Favorite</a>
+      <div id="main-meteo">
+        <h1 id="city"></h1>
+        <h2 id="country"></h2>
+        <img src="">
+        <p id="desc"></p>
+        <p id="temp"></p>
+        <p id="humidity"></p>
+      </div>
 
-    <header>
-      <form id="form">
-        <button id="search">Search</button>
-        <input type="text" id="form-search">
-      </form>
-      <button id="save">Save</button>
-      <button id="favorite">Favorite</button>
-    </header>
+      <div id="forecast-meteo">
+        <table>
+          <tr>
+            <th class="day">
+              <h3 class="day__name"></h3>
+              <img class="day__icon" src="">
+              <p class="day__temp"></p>
+            </th>
 
-    <div id="main-meteo">
-      <h1 id="city"></h1>
-      <h2 id="country"></h2>
-      <img src="">
-      <p id="desc"></p>
-      <p id="temp"></p>
-      <p id="humidity"></p>
-    </div>
+            <th class="day">
+              <h3 class="day__name"></h3>
+              <img class="day__icon" src="">
+              <p class="day__temp"></p>
+            </th>
 
-    <div id="forecast-meteo">
-      <table>
-        <tr>
-          <th class="day">
-            <h3 class="day__name"></h3>
-            <img class="day__icon" src="">
-            <p class="day__temp"></p>
-          </th>
+            <th class="day">
+              <h3 class="day__name"></h3>
+              <img class="day__icon" src="">
+              <p class="day__temp"></p>
+            </th>
 
-          <th class="day">
-            <h3 class="day__name"></h3>
-            <img class="day__icon" src="">
-            <p class="day__temp"></p>
-          </th>
+            <th class="day">
+              <h3 class="day__name"></h3>
+              <img class="day__icon" src="">
+              <p class="day__temp"></p>
+            </th>
 
-          <th class="day">
-            <h3 class="day__name"></h3>
-            <img class="day__icon" src="">
-            <p class="day__temp"></p>
-          </th>
+            <th class="day">
+              <h3 class="day__name"></h3>
+              <img class="day__icon" src="">
+              <p class="day__temp"></p>
+            </th>
+          </tr>
+        </table>
+      </div>
+  </div>
 
-          <th class="day">
-            <h3 class="day__name"></h3>
-            <img class="day__icon" src="">
-            <p class="day__temp"></p>
-          </th>
+  <div id="page-addCity">
+    <a id="page-2"></a>
+    <h1>Ajouter une ville</h1>
+    <form id="form">
+      <button id="search">Search</button>
+      <input type="text" id="form-search">
+    </form>
+    <ul id="autocomplete-list"></ul>
 
-          <th class="day">
-            <h3 class="day__name"></h3>
-            <img class="day__icon" src="">
-            <p class="day__temp"></p>
-          </th>
+    <section id="cities">
+    </section>
 
-          <th class="day">
-            <h3 class="day__name"></h3>
-            <img class="day__icon" src="">
-            <p class="day__temp"></p>
-          </th>
-        </tr>
-      </table>
-    </div>
+  </div>
 
     <!-- built files will be auto injected -->
   </body>

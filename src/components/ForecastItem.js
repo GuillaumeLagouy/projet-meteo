@@ -1,5 +1,3 @@
-import EventManager from "../tools/EventManager";
-
 class ForecastItem{
     constructor() {
         this.el = null;
@@ -13,7 +11,13 @@ class ForecastItem{
         this.fill(data);
     }
     fill(data){
-        this.day.innerHTML = data.date;
+        //sortir
+
+        const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+        let d = new Date(data.date);
+        let dayName = days[d.getDay()];
+
+        this.day.innerHTML = dayName;
         this.img.src = data.day.condition.icon;
         this.temp.innerHTML = data.day.avgtemp_c;
     }

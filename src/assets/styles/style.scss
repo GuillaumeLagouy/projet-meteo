@@ -1,18 +1,16 @@
 @import 'variables';
-
 body{
-  background: $bg-gradient;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+#page-meteo, #page-addCity{
   height: 100vh;
+  background: $bg-gradient;
 }
 
-header{
-  border: solid 1px red;
+#cities article{
+  display: flex;
 }
 
-header input, header button{
-  border: solid 1px blue;
-}
-
-#main-meteo{
-  border: solid 2px black;
-}

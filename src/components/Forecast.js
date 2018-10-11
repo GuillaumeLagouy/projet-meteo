@@ -9,8 +9,9 @@ const Forecast = {
         const items = this.el.querySelectorAll('th');
 
         let newItem;
-        var numberDay = 1;
         EventManager.addEventListener('METEO::Forecast', (data) => {
+            //refacto : créer fonction pas fonction anonyme
+            let numberDay = 1;
             Array.from(items).map(item => {
                 //refacto : utiliser le constructeur
                 newItem = new ForecastItem();

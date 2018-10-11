@@ -7,11 +7,13 @@
 import Form from './components/Form';
 import MainMeteo from './components/MainMeteo';
 import Forecast from './components/Forecast';
+import Cities from './components/Cities'
 
-const meteo = ((form, mainmeteo) =>{
+const meteo = ((form, mainmeteo, cities) =>{
     form.init();
     mainmeteo.init();
-})(Form, MainMeteo);
+    cities.init();
+})(Form, MainMeteo, Cities);
 Forecast.init();
 </script>
 
