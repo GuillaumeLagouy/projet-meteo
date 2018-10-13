@@ -9,14 +9,17 @@
   </head>
   <body>
   <div id="page-meteo">
-      <a href="#page-2" id="favorite">Favorite</a>
+    <a href="#page-2" id="favorite">+</a>
+    <div class="container">
       <div id="main-meteo">
         <h1 id="city"></h1>
         <h2 id="country"></h2>
         <img src="">
         <p id="desc"></p>
-        <p id="temp"></p>
-        <p id="humidity"></p>
+        <div class="main-meteo__info">
+          <p class="info__temp">🌡 C°<span id="temp"></span></p>
+          <p class="info__humidity">💧 <span id="humidity"></span>%</p>
+        </div>
       </div>
 
       <div id="forecast-meteo">
@@ -25,49 +28,51 @@
             <th class="day">
               <h3 class="day__name"></h3>
               <img class="day__icon" src="">
-              <p class="day__temp"></p>
+              <p><span class="day__temp"></span>C°</p>
             </th>
 
             <th class="day">
               <h3 class="day__name"></h3>
               <img class="day__icon" src="">
-              <p class="day__temp"></p>
+              <p><span class="day__temp"></span>C°</p>
             </th>
 
             <th class="day">
               <h3 class="day__name"></h3>
               <img class="day__icon" src="">
-              <p class="day__temp"></p>
+              <p><span class="day__temp"></span>C°</p>
             </th>
 
             <th class="day">
               <h3 class="day__name"></h3>
               <img class="day__icon" src="">
-              <p class="day__temp"></p>
+              <p><span class="day__temp"></span>C°</p>
             </th>
 
             <th class="day">
               <h3 class="day__name"></h3>
               <img class="day__icon" src="">
-              <p class="day__temp"></p>
+              <p><span class="day__temp"></span>C°</p>
             </th>
           </tr>
         </table>
       </div>
+    </div>
   </div>
 
+  <a id="page-2"></a>
   <div id="page-addCity">
-    <a id="page-2"></a>
-    <h1>Ajouter une ville</h1>
-    <form id="form">
-      <button id="search">Search</button>
-      <input type="text" id="form-search">
-    </form>
-    <ul id="autocomplete-list"></ul>
+    <div class="container">
+      <h1 class="page-addCity__title">AJOUTER UNE VILLE</h1>
+      <form class="searchForm" id="form">
+        <input class="searchForm__input" type="text" id="form-search" autocomplete="off">
+        <button class="searchForm__button" id="search">Search</button>
+      </form>
+      <ul id="autocomplete-list"></ul>
 
-    <section id="cities">
-    </section>
-
+      <section id="cities">
+      </section>
+    </div>
   </div>
 
     <!-- built files will be auto injected -->

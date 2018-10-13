@@ -1,16 +1,230 @@
 @import 'variables';
-body{
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
+
+body{
   overflow-y: hidden;
 }
 
 #page-meteo, #page-addCity{
   height: 100vh;
   background: $bg-gradient;
+  margin-top: 20px;
+}
+
+#page-meteo{
+  position: relative;
 }
 
 #cities article{
   display: flex;
 }
+
+#favorite{
+  position: absolute;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: $bkg-green;
+  border-radius: 100%;
+  box-shadow: $material-bxS;
+}
+
+.container{
+  margin: 10px;
+}
+
+#page-meteo .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  padding-top: 150px;
+}
+
+/*--- MAIN METEO ---*/
+#main-meteo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  h2{
+    font-weight: lighter;
+    letter-spacing: 5px;
+  }
+
+  img{
+    background-color: $secondary-bh;
+    box-shadow: $material-bxS;
+    padding: 10px;
+    border-radius: 100%;
+    margin: 20px 0 5px 0;
+  }
+
+  p#desc{
+    font-size: 14px;
+    font-style: italic;
+    color: $black-transparent
+  }
+
+  .main-meteo__info{
+    display: flex;
+    margin: 20px 0;
+    background-color: $secondary-bh;
+    box-shadow: $material-bxS;
+    padding: 5px;
+    border-radius: 5px;
+
+    p{
+      padding: 0 8px;
+    }
+
+    .info__temp{
+      border-right: $black-transparent 0.5px solid;
+    }
+    .info__humidity{
+      border-left: $black-transparent 0.5px solid;
+    }
+  }
+}
+/*--- END MAIN METEO ---*/
+
+#forecast-meteo{
+  width: 100%;
+  table{
+    background-color: $secondary-bh;
+    box-shadow: $material-bxS;
+    border-radius: 5px;
+    padding: 10px;
+    border-spacing:0;
+    margin: 0 auto;
+    th:not(:last-child){border-right: solid 1px $black-transparent}
+    th{
+      h3{
+        font-size: 12px;
+        width: 100%;
+      }
+      p{
+        width: 100%;
+        font-weight: lighter;
+        font-size: 10px;
+        span{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+/*--- PAGE 2 ---*/
+.page-addCity__title{
+  font-size: 23px;
+  padding-top: 10px;
+}
+
+//Search Form
+.searchForm{
+  display: flex;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.searchForm__input{
+  border: none;
+  width: 300px;
+  padding: 5px;
+  font-size: 14px;
+  border: 2px solid $bkg-green;
+  border-right: none;
+}
+
+.searchForm__button{
+  border: none;
+  padding: 5px 15px;
+  background-color: $bkg-green;
+  color: white;
+  font-size: 15px;
+  border: 2px solid $bkg-green;
+  border-left: none;
+}
+//END Search Form
+
+//Autocomplete list
+#autocomplete-list{
+  padding: 5px;
+  list-style-type: none;
+  background-color: $white-transparent;
+}
+
+#autocomplete-list li{
+  padding: 5px 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+//END Autocomplete list
+
+//List city
+#cities{
+  margin-top: 40px;
+}
+
+#cities article{
+  margin: 10px 0;
+  background-color: $secondary-bh;
+  box-shadow: $material-bxS;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  padding: 10px;
+}
+
+#cities article h1{
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+#cities article h2{
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+#cities article .btn-delete, #cities article #geoloc-icon{
+  position: absolute;
+  right: 0; bottom: 0;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  height: 100%;
+}
+
+#cities article .btn-delete{
+  border: none;
+  background-color: transparent;
+}
+//END List city
+
+/*--- END PAGE 2 ---*/
+
 

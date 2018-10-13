@@ -13,6 +13,7 @@ class City {
             cityArticle.innerHTML = `
                 <h1>${this.city}</h1>
                 <h2>${this.country}</h2>
+                <span id="geoloc-icon">📍</span>
             `;
             this.listen(cityArticle);
         } else {
@@ -28,7 +29,9 @@ class City {
     listen(el){
         const item = el;
         const cityName = this.city;
-        const model = {item, cityName};
+        const countryName = this.country;
+
+        const model = {item, cityName, countryName};
         if(item.querySelector('.btn-delete') !== null ){
             item.querySelector('.btn-delete').addEventListener('click', (e) => {
                 e.stopPropagation();

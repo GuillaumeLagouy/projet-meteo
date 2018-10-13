@@ -3,6 +3,7 @@ import Key from '../tools/Key';
 import City from './City';
 import AjaxGet from "./AjaxGet";
 import MainMeteo from "./MainMeteo";
+import LocalStorage from './LocalStorage';
 
 const Cities = {
     el: document.querySelector('#cities'),
@@ -22,6 +23,8 @@ const Cities = {
 
         EventManager.addEventListener('METEO::SearchCity', (data) => this.addCity(data, false));
         EventManager.addEventListener('METEO::RemoveCity', (data) => this.removeCity(data));
+
+        LocalStorage.init();
     },
     addCity(data, auto){
 
@@ -39,7 +42,7 @@ const Cities = {
             this.listCity.push(cityName);
             newCity.build();
             this.displayMeteo();
-            //mettre dans localstorage
+            LocalStorage.add(newCity);
         }
     },
     removeCity(data){
@@ -47,6 +50,10 @@ const Cities = {
         article.parentNode.removeChild(article);
         let index = this.listCity.indexOf(data.detail.cityName);
         if(index !== -1) this.listCity.splice(index, 1);
+
+        let newCity = new City(data.detail.cityName, data.detail.countryName);
+        LocalStorage.remove(newCity);
+
         MainMeteo.init();
         //supprimer du localstorage
     },

@@ -9,8 +9,10 @@ const Form = {
     btnSearch: null,
 
     init(){
-        this.city = this.el.querySelector('#form-search');
+        const autocomplete_list = document.getElementById('autocomplete-list');
+        autocomplete_list.style.display = 'none';
 
+        this.city = this.el.querySelector('#form-search');
         this.city.addEventListener('keyup', () => {this.autocomplete()});
 
         this.btnSearch = this.el.querySelector('#search');
@@ -18,7 +20,6 @@ const Form = {
             this.city.value !== '' ? this.send(e) : e.preventDefault();
             this.city.value = '';
         });
-
     },
 
     send(e){
@@ -34,8 +35,10 @@ const Form = {
         const autocomplete_list = document.getElementById('autocomplete-list');
         const min_characters = 3;
         if(this.city.value.length >= min_characters){
+
             AjaxGet('http://api.apixu.com/v1/search.json?key='+ Key + '&q=' + this.city.value, (response) => {
 
+                autocomplete_list.style.display = 'block';
                 const requestRes = JSON.parse(response);
                 autocomplete_list.innerHTML = '';
 
@@ -53,6 +56,9 @@ const Form = {
                     });
                 })
             })
+        } else {
+            autocomplete_list.innerHTML = '';
+            autocomplete_list.style.display = 'none';
         }
     }
 };
