@@ -19,7 +19,8 @@ const Forecast = {
             });
 
             document.querySelector('.main-meteo-container').style.display = 'flex';
-            LocalStorage.init();
+
+            setTimeout(() => {LocalStorage.init()}, 1500);
         })
     },
 };
