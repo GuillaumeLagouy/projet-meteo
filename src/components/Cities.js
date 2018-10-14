@@ -23,8 +23,6 @@ const Cities = {
 
         EventManager.addEventListener('METEO::SearchCity', (data) => this.addCity(data, false));
         EventManager.addEventListener('METEO::RemoveCity', (data) => this.removeCity(data));
-
-        LocalStorage.init();
     },
     addCity(data, auto){
 

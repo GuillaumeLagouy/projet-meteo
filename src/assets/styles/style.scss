@@ -16,13 +16,21 @@
 }
 
 body{
-  overflow-y: hidden;
+  overflow: hidden;
+}
+
+#cities{
+  overflow: auto;
+  height: 80vh;
+  display: block;
+  position: relative;
 }
 
 #page-meteo, #page-addCity{
   height: 100vh;
   background: $bg-gradient;
   margin-top: 20px;
+  overflow: hidden;
 }
 
 #page-meteo{
@@ -222,6 +230,7 @@ body{
 #cities article .btn-delete{
   border: none;
   background-color: transparent;
+  color: $black-transparent;
 }
 //END List city
 

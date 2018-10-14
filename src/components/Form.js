@@ -24,7 +24,7 @@ const Form = {
 
     send(e){
         e.preventDefault();
-        //Get Forecast
+
         AjaxGet('http://api.apixu.com/v1/forecast.json?key='+ Key +'&days=6&lang=fr&q='+ this.city.value, (response) =>{
             const requestRes = JSON.parse(response);
             EventManager.dispatchEvent(new CustomEvent('METEO::SearchCity', {detail: requestRes}));
@@ -53,6 +53,7 @@ const Form = {
                         Cities.addCity(model, true);
                         this.city.value = '';
                         autocomplete_list.innerHTML = '';
+                        autocomplete_list.style.display = 'none';
                     });
                 })
             })

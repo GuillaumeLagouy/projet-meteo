@@ -1,7 +1,6 @@
 import EventManager from '../tools/EventManager';
 import ForecastItem from './ForecastItem';
-import Key from '../tools/Key'
-import AjaxGet from "./AjaxGet";
+import LocalStorage from './LocalStorage';
 
 const Forecast = {
     el: document.querySelector('table'),
@@ -18,6 +17,9 @@ const Forecast = {
                 newItem.init(item, data.detail.forecast.forecastday[numberDay]);
                 numberDay++;
             });
+
+            document.querySelector('.main-meteo-container').style.display = 'flex';
+            LocalStorage.init();
         })
     },
 };

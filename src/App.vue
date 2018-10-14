@@ -10,9 +10,13 @@ import Forecast from './components/Forecast';
 import Cities from './components/Cities'
 
 const meteo = ((form, mainmeteo, cities) =>{
+
+    document.querySelector('.main-meteo-container').style.display = 'none';
+
     form.init();
     mainmeteo.init();
     cities.init();
+    
 })(Form, MainMeteo, Cities);
 Forecast.init();
 </script>

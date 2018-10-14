@@ -31,11 +31,11 @@ const LocalStorage = {
     },
     display(localstorage){
         const listLocalCity = JSON.parse(localstorage['list-city-storage']);
-        setTimeout(() => {
+        //setTimeout(() => {
             listLocalCity.map((city) => {
                 Cities.addCity(city, true);
             });
-        }, 4000);
+        //}, 4000);
     }
 };
 export default LocalStorage;
